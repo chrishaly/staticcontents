@@ -1,0 +1,27 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<meta charset="utf-8" />
+	<title></title>
+	<script>
+		function convert()
+		{
+			var cks = JSON.parse(document.getElementById("txtSrc").value);
+			cks.forEach(it=>
+			{
+				console.log(it); it.expirationDate = 1516550400; it.session = false;
+			});
+			var json = JSON.stringify(cks);
+			document.getElementById("txtDest").value = json;
+		}
+	</script>
+</head>
+<body>
+	<textarea name="textarea" id="txtSrc" cols="20" rows="1" style="height: 204px; width: 435px"></textarea>
+	<br />
+	<input type="button" value="convert" onclick="convert()" />
+	<br />
+	<textarea name="textarea0" cols="20" rows="1" style="height: 204px; width: 435px" id="txtDest"></textarea>
+</body>
+</html>
